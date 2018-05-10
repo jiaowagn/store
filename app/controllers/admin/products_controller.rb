@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
   before_action :find_product, :only => [:show, :edit, :update, :destroy]
 
   layout  'admin'
-  
+
   def index
     @products = Product.all
   end
@@ -47,6 +47,6 @@ class Admin::ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:title, :description, :price, :quantity)
+      params.require(:product).permit(:title, :description, :price, :quantity, :image)
     end
 end
